@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Wedding</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .header-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      z-index: -1;
+    }
+
+    .header-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    /* NAMES */
+    .names, .details {
+      opacity: 0;
+      animation: reveal 1s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+
+    .names {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      animation-delay: 0.1s;
+    }
+
+    .details {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.2rem;
+      color: #555;
+      animation-delay: 0.3s;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    /* EVENTS */
+    .events {
+      background: #faf7f5;
+    }
+
+    .events-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: reveal 1s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #e0c9a6;
+      transform: translateX(-50%);
+    }
+
+    .event {
+      margin-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      animation: reveal 1s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+    }
+
+    .event:nth-child(1) { animation-delay: 0.1s; }
+    .event:nth-child(2) { animation-delay: 0.3s; }
+    .event:nth-child(3) { animation-delay: 0.5s; }
+    .event:nth-child(4) { animation-delay: 0.7s; }
+
+    .dot {
+      background: #fff;
+      border: 3px solid #e0c9a6;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 2;
+      transform: scale(0);
+      animation: pop 0.6s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+
+    .card {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      width: 90%;
+      max-width: 320px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .card p {
+      margin: 8px 0 0;
+      color: #666;
+    }
+
+    /* MAP CARD */
+    .map-card {
+      margin: 60px auto 0;
+      max-width: 340px;
+      opacity: 0;
+      animation: reveal 1s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+
+    .map-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .map-card .card {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .map-card .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    /* ANIMATIONS */
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(80px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); }
+      60% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .names { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="test.jpg" alt="Wedding Photo" class="header-img">
+  <div class="header-text">
+    <h1>We're Getting Married!</h1>
+  </div>
+</header>
+
+<section>
+  <p class="names">Samruddhi<br>&<br>Nikhil</p>
+  <p class="details">March 8, 2026<br>Karad, Maharashtra</p>
+</section>
+
+<section class="events">
+  <h2 class="events-title">Wedding Events</h2>
+
+  <div class="timeline">
+    <div class="event">
+      <div class="dot">💍</div>
+      <div class="card">
+        <h3>Engagement</h3>
+        <p>March 5, 2026<br>Evening</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="dot">🎶</div>
+      <div class="card">
+        <h3>Sangeet</h3>
+        <p>March 6, 2026<br>7:00 PM onwards</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="dot">🪔</div>
+      <div class="card">
+        <h3>Vidhi</h3>
+        <p>March 7, 2026<br>Morning</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="dot">🥂</div>
+      <div class="card">
+        <h3>Reception</h3>
+        <p>March 8, 2026<br>Night</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAP CARD -->
+  <div class="map-card">
+    <a href="https://www.google.com/maps/search/?api=1&query=Karad%2C+Maharashtra" target="_blank">
+      <div class="card">
+        <h2 class="events-title">📍 Wedding Venue</h2>
+        <p>Tap to open in Google Maps</p>
+      </div>
+    </a>
+  </div>
+
+</section>
+
+<footer>
+  &copy; 2026 Samruddhi & Nikhil
+</footer>
+
+</body>
+</html>
