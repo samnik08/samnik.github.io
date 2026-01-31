@@ -3,34 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Wedding 💍</title>
+  <title>Wedding Invitation 💍</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Envelope Screen -->
-  <div id="envelope-screen" class="screen active">
-    <div class="envelope-container" onclick="openInvite()">
-      <img src="assets/envelope.png" class="envelope" />
-      <p class="tap-text">Tap to open 💌</p>
-    </div>
+<div id="invite-wrapper">
+  <!-- Left Fold -->
+  <div id="left-fold" class="fold">
+    <span>Tap</span>
   </div>
 
-  <!-- Invitation Screen -->
-  <div id="invite-screen" class="screen">
-    <div class="invite-card">
-      <h1>Alex & Jamie</h1>
-      <p class="date">Are Getting Married!</p>
-
-      <div class="details">
-        <p>📅 June 14, 2026</p>
-        <p>📍 Tuscany, Italy</p>
-      </div>
-
-      <button class="rsvp-btn">RSVP</button>
-    </div>
+  <!-- Right Fold -->
+  <div id="right-fold" class="fold">
+    <span>Tap</span>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Inside Invitation -->
+  <div id="invite-content">
+    <h1>Alex & Jamie</h1>
+    <p>Are Getting Married</p>
+
+    <div class="info">
+      <p>📅 June 14, 2026</p>
+      <p>📍 Tuscany, Italy</p>
+    </div>
+
+    <button>RSVP</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
